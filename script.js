@@ -67,14 +67,40 @@ const person = {
   console.log("Reichweite: " + auto.reichweite() + " km");
    */
 
- 
-  let hero = {
-    'name': "Mr. Steel",
-    'kraft' : 9000,
-    'vorstellen' : function(){
-        let content = document.getElementById("content");
-        content.innerHTML = (`Hello I am ${this.name}. I have a force from ${this.kraft}.`)
-    }
-    };
+let calcGas = {
+    'car': "Porsche",
+    'route': 0,
+    'consumption': 0,
+    'priceliter' : 0,
+    'calculate': function () {
+        let driveKilometer = document.getElementById("drive_kilom").value
+        let literEveryKilometer = document.getElementById("liter_per_kilom").value
+        let priceForLiter = document.getElementById("price_for_liter").value
+      
+        // In das Objekt speichern (achte auf Number!)
+        this.route = Number(driveKilometer);
+        this.consumption = Number(literEveryKilometer);
+        this.priceliter = Number(priceForLiter);
 
-    hero.vorstellen();
+
+        if(driveKilometer == "" || literEveryKilometer == ""){
+            alert("Bitte Geben Sie gültige Werte ein");
+            return;
+        }else{
+            let consumptionResult = (this.consumption / 100) * this.route ;
+            let priceForAll = consumptionResult * priceForLiter;
+        let result = document.getElementById("content");
+        result.innerHTML = `Sie sind ${this.route} Kilometer gefahren. Der Verbauch ist ${this.consumption} liter pro 100 Kilomter<br>
+        Ihr Verbrauch liegt bei ${this.route} Kilometer genau : ${consumptionResult.toFixed(2)} Liter. Es kostet Sie genau ${priceForAll.toFixed(2)} Chf.` ;
+        // Optional: Felder leeren
+        document.getElementById("drive_kilom").value = "";
+        document.getElementById("liter_per_kilom").value = "";
+        document.getElementById("price_for_liter").value = "";
+        }
+    }
+
+};
+
+function init() {
+    calcGas.calculate();
+}

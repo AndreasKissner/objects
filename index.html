@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Objects</h1>
+    <label for="drive_kilom">How much Kilometer you are driving</label>
+    <input id="drive_kilom" type="number">
+    <br><br>
+    <label for="liter_per_kilom">How much gas Your car need for 100 Kilometer?</label>
+    <input id="liter_per_kilom" type="number">
+    <br><br>
+    <label for="price_for_liter">How much a liter gas?</label>
+    <input id="price_for_liter" type="number">
+    <br><br>
 
 
     <div id="content"></div>
+    <button onclick="init()">Calculate</button>
+
 
     <script src="script.js"></script>
 </body>
+
 </html>
