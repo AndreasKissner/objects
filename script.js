@@ -1,4 +1,4 @@
-let bible = {
+/* let bible = {
     "1chapter": {
         name: "Genesis",
         verseCount: 1533,
@@ -46,3 +46,35 @@ function bibleTest() {
     document.getElementById("content").innerHTML = content;
 };
 bibleTest();
+
+const person = {
+    name: "Andi",
+    greet: function() {
+      console.log("Hallo, ich bin " + this.name);
+    }
+  };
+  
+  person.greet();
+  const auto = {
+    tank: 40,
+    verbrauch: 5,  // Liter pro 100km
+  
+    reichweite: function() {
+      return (this.tank / this.verbrauch) * 100;
+    }
+  };
+  
+  console.log("Reichweite: " + auto.reichweite() + " km");
+   */
+
+ 
+  let hero = {
+    'name': "Mr. Steel",
+    'kraft' : 9000,
+    'vorstellen' : function(){
+        let content = document.getElementById("content");
+        content.innerHTML = (`Hello I am ${this.name}. I have a force from ${this.kraft}.`)
+    }
+    };
+
+    hero.vorstellen();
